@@ -8,5 +8,5 @@ export const personalData = {
   address: 'Visakhapatnam, Andhra Pradesh, India',
   github: 'https://github.com/dinesh-basuri',
   linkedIn: 'https://www.linkedin.com/in/dinesh-kumar-basuri-b225b7232/',
-  resume: "https://drive.google.com/file/d/1uRfcf2bAAyFbYPB8WDmEgBcIG99rAa0d/view?usp=drive_link"
+  resume: "https://drive.google.com/file/d/1pA6ptY9EhxH0hsRKLp-qKv765hvhHhXE/view"
 }
