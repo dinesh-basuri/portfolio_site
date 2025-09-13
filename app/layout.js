@@ -8,12 +8,6 @@ import "./css/card.scss";
 import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
-// Lazy load GTM
-const GoogleTagManager = dynamic(
-  () => import("@next/third-parties/google").then(mod => mod.GoogleTagManager),
-  { ssr: false }
-);
-
 export const metadata = {
   title: "Dinesh Portfolio",
   description:
