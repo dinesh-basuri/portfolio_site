@@ -12,13 +12,15 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
-      } else {
-        setBtnCls(DEFAULT_BTN_CLS + " hidden");
+      if (typeof window !== "undefined" && typeof document !== "undefined") {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          setBtnCls(DEFAULT_BTN_CLS.replace(" hidden", ""));
+        } else {
+          setBtnCls(DEFAULT_BTN_CLS + " hidden");
+        }
       }
+      window.addEventListener("scroll", handleScroll, { passive: true });
     };
-    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll, { passive: true });
     };
