@@ -1,3 +1,5 @@
+"use client";
+
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
@@ -7,6 +9,18 @@ import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
+
+// Lazy load Toastify on client only
+const ToastContainer = dynamic(
+  () => import("react-toastify").then(mod => mod.ToastContainer),
+  { ssr: false }
+);
+
+// Lazy load GTM
+const GoogleTagManager = dynamic(
+  () => import("@next/third-parties/google").then(mod => mod.GoogleTagManager),
+  { ssr: false }
+);
 
 export const metadata = {
   title: "Dinesh Portfolio",
