@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
-    if (typeof window === "undefined") return; // ✅ Prevent SSR errors
+    if (typeof window !== "undefined") {
 
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
@@ -62,6 +62,7 @@ const GlowCard = ({ children, identifier }) => {
 
     document.body.addEventListener("pointermove", UPDATE);
     RESTYLE();
+  }
 
     return () => {
       document.body.removeEventListener("pointermove", UPDATE);
