@@ -10,7 +10,7 @@ const SCROLL_THRESHOLD = 50;
 const ScrollToTop = () => {
   const [btnCls, setBtnCls] = useState(DEFAULT_BTN_CLS);
 
-  useEffect(() => {
+  // useEffect(() => {
   //   const handleScroll = () => {
   //     if (typeof window !== "undefined" && typeof document !== "undefined") {
   //       console.log('scroll')
